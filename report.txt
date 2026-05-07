@@ -1,0 +1,55 @@
+EduFeedback Verification Report
+Date: 2026-04-05
+Prepared by: A.Yashaswini (B23CN111)
+Supervision: BRIKIENLABS - https://brikienlabs.tech
+
+1. Executive Summary
+- Application startup and core user flows were validated successfully.
+- The reported student login issue was reproduced and resolved.
+- End-to-end API smoke tests passed for authentication, authorization, courses, and feedback.
+
+2. Reported Issue
+- Symptom: Student users were unable to log in from the frontend.
+- Root cause: The login screen displayed an incorrect demo student account.
+  Displayed value: student@college.edu / student123
+  Valid seeded values: alice@college.edu / student123, bob@college.edu / student123
+
+3. Corrective Action
+- Updated frontend login helper text to the valid seeded student credential:
+  alice@college.edu / student123
+
+4. Environment Validation
+- Backend endpoint available at: http://localhost:5000
+- Frontend endpoint available at: http://localhost:3000
+- Health check: GET /api/health -> PASS
+
+5. API Smoke Test Results
+5.1 Authentication
+- POST /api/auth/login (student@college.edu) -> expected failure -> PASS
+- POST /api/auth/register (new student) -> PASS
+- POST /api/auth/login (new student) -> PASS
+- GET /api/auth/me (student token) -> PASS
+- POST /api/auth/login (admin@college.edu/admin123) -> PASS
+
+5.2 Authorization
+- GET /api/feedback/analytics (student token) -> expected 403 -> PASS
+- GET /api/feedback/analytics (admin token) -> PASS
+
+5.3 Courses
+- GET /api/courses (student token) -> PASS (6 records returned)
+- POST /api/courses (admin token) -> PASS
+- DELETE /api/courses/:id (admin token) -> PASS
+
+5.4 Feedback
+- GET /api/feedback/check/:courseId (student token) -> PASS
+- POST /api/feedback (initial submission) -> PASS
+- POST /api/feedback (duplicate submission) -> expected 400 -> PASS
+
+6. Current Status
+- Backend behavior is stable for tested scenarios.
+- Frontend login guidance now matches available demo data.
+- Student login works with valid seeded credentials.
+
+7. Recommended Next Steps
+- Add a small UI test that validates displayed demo credentials against seed data.
+- Add a release checklist item to verify demo account hints before deployment.
