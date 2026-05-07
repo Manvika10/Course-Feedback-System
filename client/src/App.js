@@ -102,7 +102,7 @@ function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <footer className="app-footer">
-          Developed by Gone Manvika (B23CS161) under supervision of BRIKIENLABS (
+          Developed by G.Manvika (B23CS161) under supervision of BRIKIENLABS (
           <a href="https://brikienlabs.tech" target="_blank" rel="noreferrer">
             brikienlabs.tech
           </a>

@@ -220,7 +220,7 @@ add_content_slide(prs, "Future Enhancements", [
 
 # Slide 15: Team & Credits
 add_content_slide(prs, "Team & Credits", [
-    "👨‍💻 Developer: A. Yashaswini (B23CN111)",
+    "👨‍💻 Developer: G.Manvika (B23CS161)",
     "👨‍🏫 Supervisor: BRIKIENLABS",
     "🔗 Website: https://brikienlabs.tech",
     "📧 Support & Contributions Welcome",

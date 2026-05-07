@@ -1,7 +1,7 @@
 # 🎓 EduFeedback - Unique Features Analysis
 
 **Project**: Course Feedback & Rating System  
-**Developer**: A. Yashaswini (B23CN111)  
+**Developer**: G.Manvika(B23CS161)  
 **Supervisor**: BRIKIENLABS  
 **Type**: Full-Stack MERN Application  
 **Date**: April 2026

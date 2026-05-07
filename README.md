@@ -179,5 +179,5 @@ App opens at: `http://localhost:3000`
 
 *Built with ❤️ as a Final Year MERN Stack Project*
 
-Developed by A.Yashaswini (B23CN111)
+Developed by Gone Manvika(B23CS161)
 Under supervision of BRIKIENLABS ([brikienlabs.tech](https://brikienlabs.tech))
